@@ -1,0 +1,28 @@
+# Pinned Terraform toolchain for this consumer repo.
+#
+# Source your bootstrap .env first so the secrets/endpoints are in the shell:
+#   source ../bootstrap-container/.env
+#   docker compose run --rm terraform init
+#   docker compose run --rm terraform plan
+#   docker compose run --rm terraform apply
+#
+# Mappings below adapt the bootstrap PROXMOX_* / TFC_TOKEN env to the names the
+# tfe and bpg/proxmox providers expect.
+services:
+  terraform:
+    build: .
+    working_dir: /work
+    volumes:
+      - .:/work
+    environment:
+      - TF_IN_AUTOMATION=1
+      # TFC backend auth
+      - TFE_TOKEN=${TFC_TOKEN:-}
+      # bpg/proxmox provider auth (from bootstrap PROXMOX_* vars)
+      - PROXMOX_VE_ENDPOINT=${PROXMOX_URL:-}
+      - PROXMOX_VE_USERNAME=${PROXMOX_USER:-}
+      - PROXMOX_VE_PASSWORD=${PROXMOX_PASSWORD:-}
+      - PROXMOX_VE_INSECURE=true
+      # Proxmox node for the VM (from bootstrap PROXMOX_NODE)
+      - TF_VAR_proxmox_node=${PROXMOX_NODE:-pve}
+    entrypoint: ["terraform"]
