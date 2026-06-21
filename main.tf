@@ -1,7 +1,7 @@
 # Vernify — dev01 host.
 #
-# Provisions the dev01 Ubuntu 24.04 VM that the Saicom Postgres remediation (M3) is
-# developed/tested against. Runs IN the `dev01` TFC workspace (created by
+# Provisions the dev01 Ubuntu 24.04 VM for use as a testbed for infrastructure and
+# application development/testing. Runs IN the `dev01` TFC workspace (created by
 # terraform-workspaces-deploy). Consumes the org-neutral terraform-proxmox-vm module;
 # this repo holds only Vernify's concrete values.
 

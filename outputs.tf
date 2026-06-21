@@ -1,5 +1,5 @@
 output "dev01_ipv4_address" {
-  description = "dev01's IPv4 address — put this in mosaic-infra/inventories/sandbox/hosts.yml to run the Postgres role against it."
+  description = "dev01's static IPv4 address for reaching the VM or adding to Ansible inventories."
   value       = module.dev01.ipv4_address
 }
 
