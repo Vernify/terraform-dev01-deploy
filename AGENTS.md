@@ -15,9 +15,9 @@ conflict before proceeding — quote the rule, state the contradiction, ask how 
 
 **Repo:** `terraform-dev01-deploy`
 **Domain:** Vernify (`github.com/vernify`, TFC org `Vernify`).
-**Scope:** Vernify **consumer** that provisions the `dev01` Ubuntu 24.04 VM (the Saicom
-Postgres remediation test host). Runs in the `dev01` TFC workspace; consumes the
-org-neutral `iac-foundry/terraform-proxmox-vm` module. Holds **config only**.
+**Scope:** Vernify **consumer** that provisions the `dev01` Ubuntu 24.04 VM as a testbed for
+infrastructure and application development/testing. Runs in the `dev01` TFC workspace; consumes
+the org-neutral `iac-foundry/terraform-proxmox-vm` module. Holds **config only**.
 
 ---
 
@@ -27,7 +27,7 @@ org-neutral `iac-foundry/terraform-proxmox-vm` module. Holds **config only**.
 |---|---|
 | `main.tf` | `terraform{}` (cloud backend = `dev01`) + `proxmox` provider + `terraform-proxmox-vm` module call |
 | `variables.tf` | Vernify-tunable inputs (node, sizing, SSH keys, IP) |
-| `outputs.tf` | `dev01_ipv4_address` (feed into the Saicom sandbox inventory), `dev01_vm_id` |
+| `outputs.tf` | `dev01_ipv4_address` (for use in Ansible inventories or direct SSH), `dev01_vm_id` |
 | `Dockerfile` / `docker-compose.yml` | Pinned Terraform toolchain (no reliance on local tools) |
 
 ---

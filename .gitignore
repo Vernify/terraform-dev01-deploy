@@ -10,8 +10,10 @@ crash.log
 crash.*.log
 
 # Variable files likely to contain secrets — never commit
-*.tfvars
+# Exception: *.auto.tfvars are committed (concrete config for this consumer repo)
+*.tfvars.secret
 *.tfvars.json
+!*.auto.tfvars
 !example.tfvars
 
 # Override files

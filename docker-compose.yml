@@ -11,18 +11,18 @@
 services:
   terraform:
     build: .
-    working_dir: /work
+    working_dir: /workspace/vernify/terraform-dev01-deploy
     volumes:
-      - .:/work
+      - /Users/wernervandermerwe/workspace:/workspace
     environment:
       - TF_IN_AUTOMATION=1
-      # TFC backend auth
+      # TFC cloud backend auth
+      - TF_TOKEN_app_terraform_io=${TFC_TOKEN:-}
       - TFE_TOKEN=${TFC_TOKEN:-}
-      # bpg/proxmox provider auth (from bootstrap PROXMOX_* vars)
-      - PROXMOX_VE_ENDPOINT=${PROXMOX_URL:-}
-      - PROXMOX_VE_USERNAME=${PROXMOX_USER:-}
-      - PROXMOX_VE_PASSWORD=${PROXMOX_PASSWORD:-}
-      - PROXMOX_VE_INSECURE=true
-      # Proxmox node for the VM (from bootstrap PROXMOX_NODE)
-      - TF_VAR_proxmox_node=${PROXMOX_NODE:-pve}
+      # Telmate/proxmox provider auth (username/password)
+      - TF_VAR_proxmox_api_url=https://pve08.vernify.com:8006/api2/json
+      - TF_VAR_proxmox_user=${PROXMOX_USER:-root@pam}
+      - TF_VAR_proxmox_password=${PROXMOX_PASSWORD:-}
+      # Proxmox node for the VM
+      - TF_VAR_proxmox_node=${PROXMOX_NODE:-pve08}
     entrypoint: ["terraform"]

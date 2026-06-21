@@ -1,10 +1,9 @@
 # terraform-dev01-deploy
 
-Vernify `dev01` host. Provisions the Ubuntu 24.04 VM that the **Saicom Postgres
-remediation (M3)** is developed and tested against. Runs in the `dev01` TFC workspace
+Vernify `dev01` host. Provisions the Ubuntu 24.04 VM used as the testbed for development
+and testing of infrastructure and application components. Runs in the `dev01` TFC workspace
 (created by `terraform-workspaces-deploy`) and consumes the org-neutral
-`iac-foundry/terraform-proxmox-vm` module — this repo holds only Vernify's concrete
-values.
+`iac-foundry/terraform-proxmox-vm` module — this repo holds only Vernify's concrete values.
 
 ## Prerequisites
 
@@ -36,17 +35,13 @@ The module `source` defaults to the git form. To test before pushing the module,
 the `source` in `main.tf` to the sibling checkout (`../../iac-foundry/terraform-proxmox-vm`),
 then switch back to the pinned tag for production.
 
-## Then: run the Postgres role against dev01
+## Using dev01
 
-Put the IP from `dev01_ipv4_address` into the Saicom sandbox inventory and dry-run the role:
-
-```
-# saicom/Saicom/mosaic-infra/inventories/sandbox/hosts.yml  → set ansible_host to the IP
-ansible-playbook -i inventories/sandbox/hosts.yml playbooks/postgresql.yml --check --diff
-```
-
-That closes the loop: a real Vernify VM, provisioned by this capability, used to validate
-the Postgres remediation.
+Once provisioned, dev01 is available for testing infrastructure, applications, and playbooks.
+The static IP (`192.168.22.50/24`) can be added to Ansible inventories, used as a target
+for role testing, or provisioned with additional software/services as needed. Since it can
+be easily destroyed and recreated, it serves as both the deployment target and an implicit
+rebuild validation test.
 
 ## Standards & domain
 

@@ -1,0 +1,44 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/hashicorp/null" {
+  version = "3.3.0"
+  hashes = [
+    "h1:kncZNn+Pz/CbjPNyvvFogaXuYNQre69RN8CnApzY3ac=",
+    "zh:021748b5ea3b5f6956f2e75c42c5cdc113b391fb98ac71364a4965d23b37000f",
+    "zh:3b27956f8541d46704fda234e0d535c2ae2a4b33411848b1ee262a1ec03568b0",
+    "zh:3de4ed47d6d0f4d8edba4a5092c7c9799950eda63989d8d0d2586e6afcb0aa20",
+    "zh:57ed8935c7d56dbc91cf2673534582cacfaab7a2f105f51d9f797e99df0c0c47",
+    "zh:58e176ba1d142827089e30e0711e007309a9f2726e8881986da5026e9778fdf4",
+    "zh:5949c4a3d4a93f841f155cdb7e991c087e637145c1630572e21948224f8f4923",
+    "zh:76d60f366b743003c1b085afa769b45b2198ee919927e45807d7d44fb42c067d",
+    "zh:78d5eefdd9e494defcb3c68d282b8f96630502cac21d1ea161f53cfe9bb483b3",
+    "zh:79cd1bab1261a07f84e917191d7ddc4340ac5f5524283767256f7ffd7f87caf0",
+    "zh:8ec9083038cf710b30e319eaa467c9df7fa52bbd9969b61053a35bc2cdd2e0a6",
+    "zh:a6e502cb579685ab7aeb886c2bb11ddd9cfed74b41008592d57cbc3351a9218b",
+    "zh:acb74d6b4f66ff6acfcda315df802a7432170ef3955c9b432cb4580767004006",
+    "zh:f0ce55d8d9ffdb33dab612b1246f9bab060a9d54fc32ce2b4a038646155660af",
+  ]
+}
+
+provider "registry.terraform.io/telmate/proxmox" {
+  version     = "3.0.1-rc3"
+  constraints = "3.0.1-rc3"
+  hashes = [
+    "h1:2GqyvCFguS9ARS/ZR184J4H2NahaIphtkt/e/HJ0RFM=",
+    "zh:3699c41289c6fbe0f33b6c54360d43dcfba429de5fbf49506df9276d03aea915",
+    "zh:486c9ddda427d3fecdc6dfa189fce85c4a2aa1f490b024d636c0ac6a4dd3c692",
+    "zh:6091e141a0b8dcb1632c31e0f9555117bb023176c5d083f0e03441bbcf673a4e",
+    "zh:63d312c2c2994ed39dcb47b4d43c89990bd5fff20dbda63cddfb11c9202270f4",
+    "zh:6e69c70a85cfa720f543090ee3ce7d2eb2902df19657121b8b7ae64d44875d9f",
+    "zh:897b9f6075262fc9533f87d470217b14ae82614c6818a26b578a6d41c403d4eb",
+    "zh:91c24bd374fb8ee0c9e4e1c213d157139c047be78b0cafac3c4c9724db8083b0",
+    "zh:a224b58759314dc045fdbfc88b63b036b8ca6f75ad32606e94b553f150077c13",
+    "zh:a56e940c71b45e222c69a2a45388b58ed319836b922f84f62bded5b063662f4a",
+    "zh:b2e0a83aa535cd3493fbc7485d05d1a823c48bf487e313703f01a17edc631908",
+    "zh:ba0ad4fea8ba3b01c67fb164ed92fa927ac70d2d898378d192a01e818fcf6bee",
+    "zh:c49ebe13e7011d35d72e8e6a720df83f21c106444ef4383c5d6c0015aee55db6",
+    "zh:c53e2775040e103aedcce06b9acb79ca5fccdb4c578a4b6e32489c89e9c652dc",
+    "zh:c9002cc470ccfd8cd298d5655cf76af84b1d8a200207973d9ad80235818e89e3",
+  ]
+}
