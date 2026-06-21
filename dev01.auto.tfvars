@@ -16,7 +16,7 @@ ssh_public_keys = [
 ]
 
 # Temporary password for debugging (cloud-init network config issues)
-ci_password = "vernify2026"
+# ci_password = "password_here"
 
 # Static IP for Postgres testing
 ipv4_address  = "192.168.22.50/24"
